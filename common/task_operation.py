@@ -16,7 +16,7 @@ class Task_operation:
         if token == None:
             return None
 
-        url = "https://zadania.aidevs.pl/task/" + token
+        url = "https://zadania.aidevs.pl/task/" + token 
         headers = {"Content-Type": "application/json"}
 
         try:
@@ -27,6 +27,8 @@ class Task_operation:
             code = json_response.get("code")
 
             if code == 0:
+                print(json.dumps(json_response, indent=4))
+                print()
                 return json_response
             else:
                 raise Exception(f"Task download error ({code}): {json_response}")
@@ -39,17 +41,21 @@ class Task_operation:
         headers = {"Content-Type": "application/json"}
 
         try:
-            response = requests.post(url, headers=headers, data=json.dumps(answer))
-            response.raise_for_status()
+            data = {"answer": answer}
+            print(data)
+            response = requests.post(url, headers=headers, data=json.dumps(data))
+            #response.raise_for_status()
 
             json_response = response.json()
             code = json_response.get("code")
 
             if code == 0:
-                return json_response
+                print()
+                print(json.dumps(json_response, indent=4))
+                print()
             else:
                 raise Exception(f"Task answer error: {json_response.get('msg')} ({code}) - {json_response}")
 
         except requests.exceptions.RequestException as e:
-            print(f"Authentication error: {e}")
+            print(f"Answer error: {e}")
 
