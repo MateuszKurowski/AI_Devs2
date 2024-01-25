@@ -1,6 +1,4 @@
 from auth.authenticate  import authenticate 
-import requests
-import json
 from auth.config import OPEN_AI_API_KEY
 from openai import OpenAI
 from common.task_operation import Task_operation
