@@ -1,4 +1,4 @@
-from tasks import helloapi, moderation, blogger, liar, inprompt, embedding
+from tasks import helloapi, moderation, blogger, liar, inprompt, embedding, whisper
 
 def main():
     try:
@@ -7,7 +7,8 @@ def main():
         # blogger.main()
         # liar.main()
         # inprompt.main()
-        embedding.main()
+        # embedding.main()
+        whisper.main()
 
     except Exception as e:
         print(f"Error occurred: {e}")
