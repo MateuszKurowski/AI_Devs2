@@ -29,7 +29,7 @@ class Task_operation:
             if code == 0:
                 print()
                 print("Treść zadania: ")
-                print(json.dumps(json_response, indent=4))
+                print(json.dumps(json_response, indent=4, ensure_ascii=False))
                 print()
                 print("-----------------------------------------------------------------------")
                 print()
