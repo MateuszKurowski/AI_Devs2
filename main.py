@@ -1,4 +1,4 @@
-from tasks import helloapi, moderation, blogger, liar, inprompt, embedding, whisper, functions, rodo, scraper
+from tasks import helloapi, moderation, blogger, liar, inprompt, embedding, whisper, functions, rodo, scraper, whoami
 import os
 
 tasks = {
@@ -12,6 +12,7 @@ tasks = {
     'functions': functions.main,
     'rodo': rodo.main,
     'scraper': scraper.main,
+    'whoami': whoami.main,
 }
 
 def main():
